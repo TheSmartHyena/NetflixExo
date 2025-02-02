@@ -7,6 +7,6 @@ public class Main {
         dao.create(FMovie.createMovie("Interstellar", "169 minutes", EMovieCategory.SCIFI));
         dao.create(FMovie.createMovie("John Wick", "101 minutes", EMovieCategory.ACTION));
 
-        
+
     }
 }
