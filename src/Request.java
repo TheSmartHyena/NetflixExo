@@ -9,6 +9,9 @@ public class Request {
     private Movie movie;
     private Integer target;
 
+    private String conclusion = "";
+    private boolean status = false;
+
     private Request(RequestBuilder builder) {
         this.type = builder.type;
         this.movie = builder.movie;
@@ -35,6 +38,22 @@ public class Request {
 
     public Integer getTarget() {
         return target;
+    }
+
+    public boolean getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    public void setConclusion(String conclusion) {
+        this.conclusion = conclusion;
+    }
+
+    public String getConclusion() {
+        return this.conclusion;
     }
 
     @Override
