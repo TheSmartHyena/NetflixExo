@@ -13,6 +13,9 @@ public class Main {
         User admin = FUser.createUser("Bob", EUserRole.ADMIN);
 
         // We create our chain
-        ChainLogged chainLogged = new ChainLogged(); // login check
+        IRequestHandler chainLogged = new ChainLogged(); // login check
+        IRequestHandler chainRole = new ChainRole();
+
+        chainLogged.setNext(chainRole);
     }
 }
