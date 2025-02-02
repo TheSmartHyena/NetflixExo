@@ -15,7 +15,9 @@ public class Main {
         // We create our chain
         IRequestHandler chainLogged = new ChainLogged(); // login check
         IRequestHandler chainRole = new ChainRole();
+        IRequestHandler chainLimit = new ChainCreateLimit();
 
         chainLogged.setNext(chainRole);
+        chainRole.setNext(chainLimit);
     }
 }

@@ -25,4 +25,8 @@ public class Db {
     public void delete(Integer key) {
         this.movies.remove(key);
     }
+
+    public int getSize() {
+        return this.movies.size();
+    }
 }
