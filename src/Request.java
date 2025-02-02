@@ -64,6 +64,8 @@ public class Request {
                 ", user=" + user.toString() +
                 ", movie=" + movie.toString() +
                 ", target=" + target +
+                ", status=" + status +
+                ", conclusion=" + conclusion +
                 '}';
     }
 

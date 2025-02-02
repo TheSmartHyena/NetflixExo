@@ -13,11 +13,16 @@ public class Main {
         User admin = FUser.createUser("Bob", EUserRole.ADMIN);
 
         // We create our chain
-        IRequestHandler chainLogged = new ChainLogged(); // login check
-        IRequestHandler chainRole = new ChainRole();
-        IRequestHandler chainLimit = new ChainCreateLimit();
+        ChainMaster chain = new ChainMaster();
 
-        chainLogged.setNext(chainRole);
-        chainRole.setNext(chainLimit);
+        // We create some requests
+        Movie movieToCreate = FMovie.createMovie("John Wick 2", "101 minutes", EMovieCategory.ACTION);
+
+        // We execute our request
+        chain.handleRequest(FRequest.createRequestCreate(movieToCreate, client));
+        chain.handleRequest(FRequest.createRequestCreate(movieToCreate, admin));
+
+        admin.signin();
+        chain.handleRequest(FRequest.createRequestCreate(movieToCreate, admin));
     }
 }

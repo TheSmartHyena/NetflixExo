@@ -11,6 +11,9 @@ public class Db {
     public Movie create(Movie movie) {
         movie.setId(this.movies.size());
         this.movies.put(movie.getId(), movie);
+
+        SLogger.getInstance().log("A movie has been addded in the database: " + movie.toString());
+
         return movie;
     }
 
