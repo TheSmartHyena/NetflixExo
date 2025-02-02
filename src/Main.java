@@ -7,6 +7,10 @@ public class Main {
         dao.create(FMovie.createMovie("Interstellar", "169 minutes", EMovieCategory.SCIFI));
         dao.create(FMovie.createMovie("John Wick", "101 minutes", EMovieCategory.ACTION));
 
+        // We create two user
+        User client = FUser.createUser("Joe", EUserRole.USER);
+        client.signin();
 
+        User admin = FUser.createUser("Bob", EUserRole.ADMIN);
     }
 }

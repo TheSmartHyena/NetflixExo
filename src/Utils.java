@@ -6,4 +6,11 @@ public class Utils {
             case EMovieCategory.SCIFI -> "Science-fiction";
         };
     }
+
+    public static String userRoleToString(EUserRole role) {
+        return switch(role) {
+            case EUserRole.USER -> "Utilisateur";
+            case EUserRole.ADMIN -> "Administrateur";
+        };
+    }
 }
